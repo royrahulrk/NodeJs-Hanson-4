@@ -6,6 +6,12 @@ const registerRouter = require('./routes/register');
 
 const app = express();
 
+const cors = require("cors");
+app.use(express.json());
+app.use(cors({
+    origin:"*"
+}))
+
 app.use(bodyParser.urlencoded({extended : false}));
 app.use(bodyParser.json());
 app.use(loginRouter);
